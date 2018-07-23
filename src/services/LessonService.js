@@ -40,4 +40,15 @@ export default class LessonService {
                 }
             });
     }
+
+    findAllLessons() {
+        return fetch(lessonUrl.replace('LID', ''))
+            .then(function (response) {
+                if(response.status === 500) {
+                    return null;
+                } else {
+                    return response.json();
+                }
+            });
+    }
 }

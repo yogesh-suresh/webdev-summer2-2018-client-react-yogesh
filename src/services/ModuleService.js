@@ -1,6 +1,9 @@
 let _singleton = Symbol();
 const MODULE_API_URL =
     'https://safe-falls-17862.herokuapp.com/api/course/CID/module';
+const MODULE_URL =
+    'https://safe-falls-17862.herokuapp.com/api/module/MID';
+
 
 export default class ModuleService {
     constructor(singletonToken) {
@@ -23,6 +26,13 @@ export default class ModuleService {
     }
     findAllModulesForCourse(courseId) {
         return fetch(MODULE_API_URL.replace('CID', courseId))
+            .then(function (response) {
+                return response.json();
+            })
+    }
+
+    findAllModules() {
+        return fetch(MODULE_URL.replace('MID', ''))
             .then(function (response) {
                 return response.json();
             })
