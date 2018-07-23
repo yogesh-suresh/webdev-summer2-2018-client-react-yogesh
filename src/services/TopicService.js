@@ -1,8 +1,8 @@
 let _singleton = Symbol();
 const topicCourseUrl =
-    'http://localhost:8080/api/course/CID/module/MID/lesson/LID/topic';
+    'https://safe-falls-17862.herokuapp.com/api/course/CID/module/MID/lesson/LID/topic';
 const topicUrl=
-    'http://localhost:8080/api/topic/TID';
+    'https://safe-falls-17862.herokuapp.com/api/topic/TID';
 
 export default class TopicService {
     constructor(singletonToken) {

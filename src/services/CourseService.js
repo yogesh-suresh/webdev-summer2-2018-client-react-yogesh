@@ -1,7 +1,7 @@
 // Ref from Prof repo
 let _singleton = Symbol();
 const COURSE_API_URL =
-    'http://localhost:8080/api/course';
+    'https://safe-falls-17862.herokuapp.com/api/course';
 
 class CourseService {
     constructor(singletonToken) {

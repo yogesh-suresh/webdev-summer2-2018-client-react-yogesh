@@ -1,8 +1,8 @@
 let _singleton = Symbol();
 const lessonCourseUrl =
-    'http://localhost:8080/api/course/CID/module/MID/lesson';
+    'https://safe-falls-17862.herokuapp.com/api/course/CID/module/MID/lesson';
 const lessonUrl =
-    'http://localhost:8080/api/lesson/LID';
+    'https://safe-falls-17862.herokuapp.com/api/lesson/LID';
 
 export default class LessonService {
     constructor(singletonToken) {
