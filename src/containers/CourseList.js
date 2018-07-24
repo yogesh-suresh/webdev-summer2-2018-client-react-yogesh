@@ -10,19 +10,33 @@ class CourseList extends React.Component {
         this.state = {courses: [],
                      currCourse:{title:''},
                         updBtnFlag: 'F',
-                        courseTrackId: ''
+                        courseTrackId: '',
+                        style : 'C'
                     };
         self = this;
         this.titleChanged = this.titleChanged.bind(this);
         this.createCourse = this.createCourse.bind(this);
         this.deleteCourse = this.deleteCourse.bind(this);
         this.updateCourse = this.updateCourse.bind(this);
+        this.gridSelect = this.gridSelect.bind(this);
+
     }
     titleChanged(event) {
         this.setState({
             course: {title: event.target.value}
         });
     }
+    gridSelect() {
+        if(this.state.style == 'C')
+        {
+            this.setState({style: 'G'});}
+        else
+        {
+
+            this.setState({style: 'C'});
+        }
+    }
+
     createCourse() {
         let newCourse;
         if(this.state.updBtnFlag == 'F') {
@@ -82,9 +96,11 @@ class CourseList extends React.Component {
     }
     renderCourseRows() {
         let courses = null;
+        let style = this.state.style;
         if(this.state) {
             courses = this.state.courses.map(function(course) {
                 return <CourseRow key={course.id}
+                                  style={style}
                                   course={course}
                                   deleteCourseHandler={self.deleteCourse}
                                   updateCourseHandler={self.updateCourse}/>
@@ -106,6 +122,17 @@ class CourseList extends React.Component {
             <div>
                 <div className="container-fluid">
                     <h3 className="modal-title">Course List</h3>
+
+                    <button onClick={this.gridSelect}
+                            className="btn btn-primary">
+                        {/*<span style={{marginLeft:'1100px'}} >*/}
+                            <i className="fa fa-th-large"></i>
+                    {/*</span>*/}
+                    </button>
+
+                    {/*<i className="fa fa-th-large" aria-hidden="true" onClick={this.gridSelect} ></i>*/}
+
+
                 </div>
                 <table className="table table-bordered">
                     <thead>
