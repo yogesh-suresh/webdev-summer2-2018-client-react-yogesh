@@ -260,7 +260,7 @@ export const widgetReducer = (state = {widgets: [], preview: false}, action) => 
         case constants.SAVE:
 
 
-            fetch('http://safe-falls-17862.herokuapp.com/api/topic/'+action.topicId+"/widgets", {
+            fetch('https//safe-falls-17862.herokuapp.com/api/topic/'+action.topicId+"/widgets", {
                 method: 'post',
                 body: JSON.stringify(state.widgets),
                 headers: {

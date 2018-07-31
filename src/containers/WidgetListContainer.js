@@ -92,7 +92,7 @@ const dispatcherToPropsMapper = dispatch => ({
 
 
     findAllWidgetsForTopic: (topicId)  => {
-        fetch('http://safe-falls-17862.herokuapp.com/api/topic/'+topicId+"/widget")
+        fetch('https://safe-falls-17862.herokuapp.com/api/topic/'+topicId+"/widget")
             .then(response => (response.json()))
             .then(widgets => dispatch({
                 type: constants.FIND_ALL_WIDGETS_FOR_TOPIC,
